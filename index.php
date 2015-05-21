@@ -21,9 +21,25 @@
 			//var text = '{"name":"Trần Quốc Việt","tel":"0908532383"}';
 			//var obj = JSON.parse(text);
 			//var obj = $.parseJSON(text);
+			//
+			//
+			
 
 			$.noConflict();
 			jQuery(document).ready(function($) {
+				function myFunction(arr) 
+				{
+				    var out = "";
+				    var i;
+				    for(i = 0; i < arr.length; i++) 
+				    		{
+				        	out += '<a href="' + arr[i].Name + '">' + arr[i].Email + '</a><br>';
+   							}
+						   $("#data_return").append(out);
+				}
+
+
+
 				$("#getall").click(function(event) {
 
 						$.ajax({
@@ -31,13 +47,19 @@
 						})
 						.done(function(data) {
 							$("#data_return").html('');
-							var getData = $.parseJSON(data);
-									$.each(getData, function(key, val) 
-									{
-										var dataneed = JSON.stringify(val);//object to Json string
-											var real = JSON.parse(dataneed);
-											console.log(real.Email);
-							          });
+							var getData = JSON.parse(data);
+								console.log(getData);
+								myFunction(getData);
+
+
+
+
+									// $.each(getData, function(key, val) 
+									// {
+									// 	var dataneed = JSON.stringify(val);//object to Json string
+									// 		var real = JSON.parse(dataneed);
+									// 		console.log(real.Email);
+							  //         });
 						})
 						.fail(function() {
 							console.log("error");
