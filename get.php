@@ -9,6 +9,7 @@
 	// 		mysql_select_db('sample');
 
 
+
 $servername = "localhost";
 $username = "root";
 $password = "fvn2012";

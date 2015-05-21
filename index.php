@@ -30,22 +30,14 @@
 							url:'get.php'
 						})
 						.done(function(data) {
+							$("#data_return").html('');
 							var getData = $.parseJSON(data);
-
-					// 		$.each(data, function(key, val) {
-					//             alert('Key = '+key+' : value = '+val);
-					//         });
-
-							// $.each(getData, function(index, val) {
-							// 	//console.log('Key = '+index+' : value = '+val)
-							// 	//
-							// 	//alert('Key = '+index+' : value = '+val);
-							// 	//
-							// 	var fildata = $.parseJSON(val);
-							// 	console.log('Key = '+index+' : value = '+fildata)
-							// });
-
-							console.log(data);
+									$.each(getData, function(key, val) 
+									{
+										var dataneed = JSON.stringify(val);//object to Json string
+											var real = JSON.parse(dataneed);
+											console.log(real.Email);
+							          });
 						})
 						.fail(function() {
 							console.log("error");
@@ -58,23 +50,6 @@
 
 
 
-						// $.ajax({
-						// 	url: 'get.php',
-						// 	type: 'GET',
-						// 	//dataType: 'default: Intelligent Guess (Other values: xml, json, script, or html)',
-						// 	//data: {param1: 'value1'},
-						// })
-						// .done(function(data) {
-						// 	var obj = JSON.parse(data);
-						// 	alert(obj.name);
-						// 	console.log(obj);
-						// })
-						// .fail(function(data) {
-						// 	console.log("error");
-						// })
-						// .always(function(data) {
-						// 	console.log("complete");
-						// });
 						
 				});//end click
 			});//ready
@@ -88,6 +63,9 @@
 	<body>
 		<h1 class="text-center"></h1>
 		<button id="getall">Get All</button>
+		<div id="data_return">
+			
+		</div>
 
 
 		
