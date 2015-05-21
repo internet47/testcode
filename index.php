@@ -36,16 +36,16 @@
 					//             alert('Key = '+key+' : value = '+val);
 					//         });
 
-							$.each(getData, function(index, val) {
-								//console.log('Key = '+index+' : value = '+val)
-								//
-								//alert('Key = '+index+' : value = '+val);
-								//
-								var fildata = $.parseJSON(val);
-								console.log('Key = '+index+' : value = '+fildata)
-							});
+							// $.each(getData, function(index, val) {
+							// 	//console.log('Key = '+index+' : value = '+val)
+							// 	//
+							// 	//alert('Key = '+index+' : value = '+val);
+							// 	//
+							// 	var fildata = $.parseJSON(val);
+							// 	console.log('Key = '+index+' : value = '+fildata)
+							// });
 
-							//console.log(data);
+							console.log(data);
 						})
 						.fail(function() {
 							console.log("error");
